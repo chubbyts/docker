@@ -18,6 +18,7 @@ services:
       - ~/.bash_history:/home/node/.bash_history
       - ~/.gitconfig:/home/node/.gitconfig
       - ~/.gitignore:/home/node/.gitignore
+      - ~/.npmrc:/home/node/.npmrc
       - ~/.zsh_docker:/home/node/.zsh_docker
       - ~/.zsh_history:/home/node/.zsh_history
       - $SSH_AUTH_SOCK:/ssh-agent
