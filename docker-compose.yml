@@ -1,0 +1,66 @@
+services:
+  node:
+    container_name: chubbyts-node
+    hostname: node
+    build:
+      dockerfile: ./docker/node/Dockerfile
+      context: ./
+      args:
+        USER_ID: ${USER_ID:-1000}
+        GROUP_ID: ${GROUP_ID:-1000}
+    environment:
+      MONGODB_URI: mongodb://root:GEUvJ0egRX479axgMUcU@mongo:27017/?authSource=admin
+      POSTGRES_URL: pgsql://root:NeOnLM8W7ZC58XQe01Hc@postgres:5432?charset=utf8
+      SSH_AUTH_SOCK: /ssh-agent
+    volumes:
+      - ${PWD}/..:/app
+      - ~/.bash_docker:/home/node/.bash_docker
+      - ~/.bash_history:/home/node/.bash_history
+      - ~/.gitconfig:/home/node/.gitconfig
+      - ~/.gitignore:/home/node/.gitignore
+      - ~/.zsh_docker:/home/node/.zsh_docker
+      - ~/.zsh_history:/home/node/.zsh_history
+      - $SSH_AUTH_SOCK:/ssh-agent
+    depends_on:
+      - mongo
+      - postgres
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  mongo:
+    container_name: chubbyts-mongo
+    hostname: mongo
+    image: mongo:8
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: GEUvJ0egRX479axgMUcU
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo:/data/db
+  postgres:
+    container_name: chubbyts-postgres
+    hostname: postgres
+    image: postgres:17
+    command: -c log_statement=all -c log_error_verbosity=VERBOSE
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: NeOnLM8W7ZC58XQe01Hc
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres:/var/lib/postgresql/data
+  nginx:
+    container_name: chubbyts-nginx
+    hostname: nginx
+    image: nginx
+    ports:
+      - '443:443'
+    volumes:
+      - ${PWD}/..:/app:ro
+      - ./docker/nginx:/etc/nginx/templates
+    depends_on:
+      - node
+
+volumes:
+  mongo:
+  postgres:

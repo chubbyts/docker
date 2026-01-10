@@ -1,0 +1,24 @@
+# fnm
+export PATH=$HOME/.fnm:$PATH
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+export HISTSIZE=5000
+export SAVEHIST=100000
+
+export EDITOR='vim'
+
+alias cls="printf '\033c'; printf '\033[3J'"
+
+alias ls='ls -ahl --color=auto'
+alias mkdir='mkdir -pv'
+
+alias cp='cp -i'
+alias ln='ln -i'
+alias mv='mv -i'
+alias rm='rm -i'
