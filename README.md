@@ -1,5 +1,34 @@
 # docker
 
+## setup on host
+
+### bash
+
+```sh
+touch ~/.bash_docker
+touch ~/.bash_history
+```
+
+### git
+
+```sh
+touch ~/.gitconfig
+touch ~/.gitignore
+```
+
+### npm
+
+```sh
+touch ~/.npmrc
+```
+
+### zsh
+
+```sh
+touch ~/.zsh_docker
+touch ~/.zsh_history
+```
+
 ##  Use nginx as reverse proxy
 
 **IMPORTANT: It is meant for simple testing a project not having an own docker setup yet.**
