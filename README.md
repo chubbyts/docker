@@ -22,6 +22,13 @@ touch ~/.gitignore
 touch ~/.npmrc
 ```
 
+### opencode
+
+```sh
+mkdir -p ~/.local/share/opencode
+[ ! -f ~/.local/share/opencode/auth.json ] && echo '{}' > ~/.local/share/opencode/auth.json
+```
+
 ### zsh
 
 ```sh
