@@ -29,6 +29,13 @@ mkdir -p ~/.local/share/opencode
 [ ! -f ~/.local/share/opencode/auth.json ] && echo '{}' > ~/.local/share/opencode/auth.json
 ```
 
+### ssh
+
+```sh
+mkdir -p ~/.ssh
+touch github.pub
+```
+
 ### zsh
 
 ```sh

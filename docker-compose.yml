@@ -20,6 +20,7 @@ services:
       - ~/.gitignore:/home/node/.gitignore
       - ~/.local/share/opencode/auth.json:/home/node/.local/share/opencode/auth.json
       - ~/.npmrc:/home/node/.npmrc
+      - ~/.ssh/github.pub:/home/php/.ssh/github.pub
       - ~/.zsh_docker:/home/node/.zsh_docker
       - ~/.zsh_history:/home/node/.zsh_history
       - $SSH_AUTH_SOCK:/ssh-agent
