@@ -1,7 +1,7 @@
 services:
   node:
     container_name: chubbyts-node
-    hostname: node
+    hostname: chubbyts-node
     build:
       dockerfile: ./docker/node/Dockerfile
       context: ./
@@ -31,7 +31,7 @@ services:
       - "host.docker.internal:host-gateway"
   mongo:
     container_name: chubbyts-mongo
-    hostname: mongo
+    hostname: chubbyts-mongo
     image: mongo:8
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
@@ -42,7 +42,7 @@ services:
       - mongo:/data/db
   postgres:
     container_name: chubbyts-postgres
-    hostname: postgres
+    hostname: chubbyts-postgres
     image: postgres:17
     command: -c log_statement=all -c log_error_verbosity=VERBOSE
     environment:
@@ -54,7 +54,7 @@ services:
       - postgres:/var/lib/postgresql/data
   nginx:
     container_name: chubbyts-nginx
-    hostname: nginx
+    hostname: chubbyts-nginx
     image: nginx
     ports:
       - '443:443'
