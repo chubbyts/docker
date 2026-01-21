@@ -1,3 +1,4 @@
+name: chubbyts
 services:
   node:
     container_name: chubbyts-node
