@@ -34,6 +34,7 @@ services:
     container_name: chubbyts-mongo
     hostname: chubbyts-mongo
     image: mongo:8
+    restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: GEUvJ0egRX479axgMUcU
