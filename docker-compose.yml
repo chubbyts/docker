@@ -19,6 +19,7 @@ services:
       - ~/.bash_history:/home/node/.bash_history
       - ~/.gitconfig:/home/node/.gitconfig
       - ~/.gitignore:/home/node/.gitignore
+      - ~/.config/opencode/tui.json:/home/node/.config/opencode/tui.json
       - ~/.local/share/opencode/auth.json:/home/node/.local/share/opencode/auth.json
       - ~/.npmrc:/home/node/.npmrc
       - ~/.ssh/github.pub:/home/node/.ssh/github.pub
