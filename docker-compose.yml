@@ -9,6 +9,7 @@ services:
       args:
         USER_ID: ${USER_ID:-1000}
         GROUP_ID: ${GROUP_ID:-1000}
+    userns_mode: keep-id
     environment:
       MONGODB_URI: mongodb://root:GEUvJ0egRX479axgMUcU@mongo:27017/?authSource=admin
       POSTGRES_URL: pgsql://root:NeOnLM8W7ZC58XQe01Hc@postgres:5432?charset=utf8
