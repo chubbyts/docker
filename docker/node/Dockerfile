@@ -51,7 +51,8 @@ RUN curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$HOME/
     && npm install -g corepack@latest \
     && corepack enable pnpm
 
-RUN curl -fsSL https://opencode.ai/install | bash -s -- --no-modify-path \
+RUN source ~/.bashrc \
+    && npm install -g opencode-ai@latest \
     && mkdir -p "$HOME/.config/opencode" \
     && mkdir -p "$HOME/.local/share/opencode"
 
