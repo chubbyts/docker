@@ -16,17 +16,23 @@ services:
       SSH_AUTH_SOCK: /ssh-agent
     volumes:
       - ${PWD}/..:/app
+      - $SSH_AUTH_SOCK:/ssh-agent
+      # bash
       - ~/.bash_docker:/home/node/.bash_docker
       - ~/.bash_history:/home/node/.bash_history
-      - ~/.gitconfig:/home/node/.gitconfig
-      - ~/.gitignore:/home/node/.gitignore
-      - ~/.config/opencode/tui.json:/home/node/.config/opencode/tui.json
-      - ~/.local/share/opencode/auth.json:/home/node/.local/share/opencode/auth.json
-      - ~/.npmrc:/home/node/.npmrc
-      - ~/.ssh/github.pub:/home/node/.ssh/github.pub
+      # zsh
       - ~/.zsh_docker:/home/node/.zsh_docker
       - ~/.zsh_history:/home/node/.zsh_history
-      - $SSH_AUTH_SOCK:/ssh-agent
+      # git
+      - ~/.gitconfig:/home/node/.gitconfig
+      - ~/.gitignore:/home/node/.gitignore
+      # ssh
+      - ~/.ssh/github.pub:/home/node/.ssh/github.pub
+      # npm
+      - ~/.npmrc:/home/node/.npmrc
+      # opencode - coding agent
+      - ~/.config/opencode/tui.json:/home/node/.config/opencode/tui.json
+      - ~/.local/share/opencode/auth.json:/home/node/.local/share/opencode/auth.json
     depends_on:
       - mongo
       - postgres
