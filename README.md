@@ -45,6 +45,13 @@ mkdir -p ~/.local/share/opencode
 [ ! -f ~/.local/share/opencode/auth.json ] && echo '{}' > ~/.local/share/opencode/auth.json
 ```
 
+### pi - coding agent
+
+```sh
+mkdir -p ~/.pi/agent
+[ ! -f ~/.pi/agent/auth.json ] && echo '{}' > ~/.pi/agent/auth.json
+```
+
 ##  Use nginx as reverse proxy
 
 **IMPORTANT: It is meant for simple testing a project not having an own docker setup yet.**
