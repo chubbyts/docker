@@ -9,26 +9,18 @@ touch ~/.bash_docker
 touch ~/.bash_history
 ```
 
+### zsh
+
+```sh
+touch ~/.zsh_docker
+touch ~/.zsh_history
+```
+
 ### git
 
 ```sh
 touch ~/.gitconfig
 touch ~/.gitignore
-```
-
-### npm
-
-```sh
-touch ~/.npmrc
-```
-
-### opencode
-
-```sh
-mkdir -p ~/.config/opencode
-[ ! -f ~/.local/share/opencode/auth.json ] && echo '{}' > ~/.config/opencode/tui.json
-mkdir -p ~/.local/share/opencode
-[ ! -f ~/.local/share/opencode/auth.json ] && echo '{}' > ~/.local/share/opencode/auth.json
 ```
 
 ### ssh
@@ -38,11 +30,19 @@ mkdir -p ~/.ssh
 touch github.pub
 ```
 
-### zsh
+### npm
 
 ```sh
-touch ~/.zsh_docker
-touch ~/.zsh_history
+touch ~/.npmrc
+```
+
+### opencode - coding agent
+
+```sh
+mkdir -p ~/.config/opencode
+[ ! -f ~/.local/share/opencode/auth.json ] && echo '{}' > ~/.config/opencode/tui.json
+mkdir -p ~/.local/share/opencode
+[ ! -f ~/.local/share/opencode/auth.json ] && echo '{}' > ~/.local/share/opencode/auth.json
 ```
 
 ##  Use nginx as reverse proxy
