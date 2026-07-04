@@ -36,11 +36,20 @@ touch github.pub
 touch ~/.npmrc
 ```
 
+### claude - coding agent
+
+```sh
+[ ! -f ~/.claude.json ] && echo '{}' > ~/.claude.json
+mkdir -p ~/.claude
+[ ! -f ~/.claude/.credentials.json ] && echo '{}' > ~/.claude/.credentials.json
+[ ! -f ~/.claude/settings.json ] && echo '{}' > ~/.claude/settings.json
+```
+
 ### opencode - coding agent
 
 ```sh
 mkdir -p ~/.config/opencode
-[ ! -f ~/.local/share/opencode/auth.json ] && echo '{}' > ~/.config/opencode/tui.json
+[ ! -f ~/.config/opencode/tui.json ] && echo '{}' > ~/.config/opencode/tui.json
 mkdir -p ~/.local/share/opencode
 [ ! -f ~/.local/share/opencode/auth.json ] && echo '{}' > ~/.local/share/opencode/auth.json
 ```
