@@ -147,7 +147,13 @@ mkdir -p ~/.pi/agent
 ##### llama.cpp
 
 ```sh
-llama-server -hf lmstudio-community/Qwen3.6-35B-A3B-GGUF:Q4_K_M -c 32768 -ngl 999 --flash-attn on --host 0.0.0.0 --port 9931
+llama-server \
+    -hf lmstudio-community/Qwen3.6-35B-A3B-GGUF:Q4_K_M \
+    -c 32768 \
+    -ngl 999 \
+    --flash-attn on \
+    --host 0.0.0.0 \
+    --port 9931
 ```
 
 ##  Use nginx as reverse proxy
