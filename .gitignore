@@ -4,3 +4,4 @@
 !docker-compose.yml
 !LICENSE
 !README.md
+!setup-mount-points.sh
