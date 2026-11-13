@@ -72,17 +72,6 @@ services:
       - '5432:5432'
     volumes:
       - postgres:/var/lib/postgresql/data
-  nginx:
-    container_name: chubbyts-nginx
-    hostname: chubbyts-nginx
-    image: nginx
-    ports:
-      - '443:443'
-    volumes:
-      - ${PWD}/..:/app:ro
-      - ./docker/nginx:/etc/nginx/templates
-    depends_on:
-      - node
 
 volumes:
   mongo:
