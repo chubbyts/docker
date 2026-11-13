@@ -71,4 +71,4 @@ RUN source ~/.bashrc \
 
 WORKDIR /app
 
-CMD trap "exit $?" TERM; while :; do sleep 1; done
+CMD ["/bin/bash", "-c", "trap 'exit 0' TERM INT; sleep infinity & wait"]
