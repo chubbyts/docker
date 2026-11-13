@@ -45,9 +45,9 @@ WORKDIR /home/node
 
 RUN curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$HOME/.fnm" --skip-shell \
     && source ~/.bashrc \
-    && fnm install 26 \
-    && fnm default 26 \
-    && fnm use 26 \
+    && fnm install 22 \
+    && fnm default 22 \
+    && fnm use 22 \
     && npm install -g corepack@latest \
     && corepack enable pnpm
 
