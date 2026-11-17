@@ -63,7 +63,7 @@ services:
   postgres:
     container_name: chubbyts-postgres
     hostname: chubbyts-postgres
-    image: postgres:17
+    image: postgres:18
     command: -c log_statement=all -c log_error_verbosity=VERBOSE
     environment:
       POSTGRES_USER: root
